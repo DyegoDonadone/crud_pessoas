@@ -12,7 +12,7 @@ class Person extends Model
     protected $table = 'person';
 
     protected $fillable = [
-        'cpf_cnpj', 'name', 'rg ',
+        'cpf_cnpj', 'name', 'rg',
         'sex', 'datebirth_or_foundation', 'corporate_name',
         'fantasy_name', 'state_registration', 'status', 'class',
     ];

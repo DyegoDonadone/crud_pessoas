@@ -9,10 +9,11 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('person.index')}}">Pessoas</a> <i class="fa fa-arrow-right"></i> Cadastro
+                    <a href="{{ route('person.index')}}">Pessoas</a> 
+                    <i class="fa fa-arrow-right"></i> Edição
                 </div>
                 <div class="card-body">
-                    <form action="#" method="post">
+                    <form action="{{ route('person.update')}}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-md-4">
@@ -39,7 +40,7 @@
                                 <label for=""> Sexo: 
                                     <select name="sex" class="form-control">
                                         @foreach(config('helpers.sex') as $key => $value)
-                                            <option value="{{$key}}">{{$value}}</option>
+                                            <option {{($person->sex == $key ? 'selected' : '')}} value="{{$key}}">{{$value}}</option>
                                         @endforeach
                                     </select>
                                 </label>
@@ -52,7 +53,7 @@
                             </div>
 
                             <div class="col-md-4 fisica">
-                                <label for="">RG: <input type="text" name="rg" value="{{$person->cpf_cnpj}}" class="form-control"/></label>
+                                <label for="">RG: <input type="text" name="rg" value="{{$person->rg}}" class="form-control"/></label>
                             </div>
 
                             <div class="col-md-4">
@@ -61,12 +62,14 @@
                             </div>
 
                             <div class="col-md-4 juridica">
-                            <label for=""> Nome Fantasia: <input type="text" name="fantasy_name" class="form-control"/></label>
+                            <label for=""> Nome Fantasia: <input type="text" name="fantasy_name" value="{{$person->fantasy_name}}" class="form-control"/></label>
                             </div>
 
                             <div class="col-md-4 juridica">
-                            <label for="">Inscrição Estadual: <input type="text" name="state_registration" class="form-control"/></label>
+                            <label for="">Inscrição Estadual: <input type="text" name="state_registration" value="{{$person->state_registration}}" class="form-control"/></label>
                             </div>
+
+                            <input type="text" name="id" value="{{$person->id}}" class="hide">
                         </div>
 
                         <div class="row m-t-10">

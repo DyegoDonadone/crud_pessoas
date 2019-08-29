@@ -40,8 +40,13 @@ class PersonController extends Controller
     }
 
     public function update(Request $request)
-    {
-       
+    {   
+        $input = $request->all();
+
+        $person = Person::findOrFail($request->id);
+        $person->update($input);
+
+        return redirect()->route('person.index');
     }
 
     public function destroy($id){

@@ -19,8 +19,8 @@ Route::resource('/person', 'PersonController', ['except' => 'show', 'names' => [
     'index' => 'person.index',
     'create' => 'person.create',
     'store' => 'person.store',
-    'edit' => 'person.edit',
-    'update' => 'person.update'
+    'edit' => 'person.edit'
 ]]);
+Route::post('/person/update', 'PersonController@update')->name('person.update');
 Route::get('/person/destroy/{id}', 'PersonController@destroy')->name('person.destroy');
 Route::get('/person/status', 'PersonController@status');
