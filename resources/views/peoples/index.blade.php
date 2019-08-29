@@ -35,7 +35,7 @@
                                         <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Opções
                                         <span class="caret"></span></button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Editar</a></li>                                           
+                                            <li><a href="{{route('person.edit', [$people->id])}}">Editar</a></li>                                           
                                             <li><a href="{{route('person.destroy', [$people->id])}}">Excluir</a></li>
                                         </ul>
                                         </div>

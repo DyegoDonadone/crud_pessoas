@@ -34,7 +34,9 @@ class PersonController extends Controller
     
     public function edit($id)
     {
-       
+        $person = Person::findOrFail($id);
+
+        return view('peoples.edit', compact('person'));
     }
 
     public function update(Request $request)
