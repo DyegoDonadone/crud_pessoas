@@ -10,6 +10,8 @@
 ## Laravel
 
 * Renomear o arquivo .env.exemple para .env
-* Adicionar configurações do banco de dados no arquivo .env
 * Rodar comando composer install
-* Start do projeto usando php artisan serve  
+* Adicionar configurações do banco de dados no arquivo .env
+* Rodar comando php artisan migrate
+* Start do projeto usando php artisan serve
+* Registrar um usuário  
